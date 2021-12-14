@@ -1,6 +1,10 @@
 # Docker_implemented_Text-based Chats - SDN 
 
-## This is the implemetation and documentation for implenemting Network Slicing through RYU SDN controller in SDN data plane in Containernet emulator for Mobile Computing project
+## This is the implemetation and documentation for implenemting Docker container based SDN Network Slicing through RYU SDN controller in SDN data plane in Containernet emulator for Mobile Computing project
+
+### LICENCE 
+
+Copyright © Riyad Ul Islam
 
 ### The followings is the architectural overview of SDN network implementation and Security Testing of Data Plane with SNORT IDS.
 
@@ -17,15 +21,19 @@ Data centre. The core switches DPID with 1 and 2 is connect with switches DPID w
 The motive of this topology is to make two slices. In slice 1 consists of h1 (Host 1 where mac ends with 11), h2
 (Host 2 where mac ends with 12) and d1(Data centre service 1 where mac ends with 13) and in slice 2 consists
 of h3, h4, h5. Slice 1 devices or services can only communicate each other which is totally independent from
-slice 2 devices or services. This method is also applicable for slice 2. All the host machines are in docker container with pre-installed client chat service and data centre machines which is also in docker container preinstalled text-based chat server for providing chat service to the clients.
+slice 2 devices or services. This method is also applicable for slice 2. All the host machines are in docker container with pre-installed client chat service and data centre machines which is also in ***docker container*** preinstalled text-based chat server for providing chat service to the clients.
 
 ***Two Extension of this project is measured.***
 All the iplemented file will be found in **Project_work_extension** folder.
 
-One extension is, before the improvement the slicing has been happened only on one application like for chatting only within the hosts. But after the improvement slicing now can be done service based. Both chatting application service and file server application service is in two different slices. For instance, now hosts
+### Application Based Slicing.
+
+Before the improvement the slicing has been happened only on one application like for chatting only within the hosts. But after the improvement slicing now can be done service based. Both chatting application service and file server application service is in two different slices. For instance, now hosts
 in slice 1 only can get the service of chatting and hosts in slice 2 can only reach for the
 service of file server application. Moreover, experimental testing has been done for slicing on
 the basis on ICMP protocol and TCP protocol. SDN Application for this case is in **'slicing_application_ryu_controller.py'** in **‘project_ryu’** folder.
+
+### SNORT IDS implementation.
 
 Another extension is to implement security testing within this SDN network. To enhance the scenario,  an approach has been taken to detect and mitigate DDoS
 attack with ping flooding and TCP syn-ack flooding. Here, an open source IDS called snort has
@@ -45,5 +53,9 @@ thresholding snort IDS, files can be found in **‘project_ryu/ snort_rules_thre
 name of **‘local.rules’** and **‘threshold.conf’** respectively. 
 
 
+### Documentation.
 
-For the Implementation of the network check the documentation: [Project Documentation](https://github.com/sudo-riyad/RYU-SDN-contoller-in-CORE/blob/cc64d009d620c4626b2264d7d2c1c59770244a85/Documentation/IndividualProject_Islam_Riyad-Ul-_1324662.pdf)
+For the Implementation of the network check the documentation: [Project Documentation](https://github.com/sudo-riyad/SDN_Network_in_Mininet/blob/ae691717b5ddb8b263a517d7674a58914594e7c5/Documentation/M.pdf)
+
+Find the documentation of project extension: [Extension Documentation](https://github.com/sudo-riyad/SDN_Network_in_Mininet/blob/ae691717b5ddb8b263a517d7674a58914594e7c5/Documentation/improvements.pdf)
+
