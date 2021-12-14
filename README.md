@@ -2,7 +2,7 @@
 
 ## This is the implemetation and documentation for implenemting Network Slicing through RYU SDN controller in SDN data plane in Containernet emulator for Mobile Computing project
 
-### The followings is the architectural overview of SDN network implementation and Security Testing of Data Plane with SNORT IDs.
+### The followings is the architectural overview of SDN network implementation and Security Testing of Data Plane with SNORT IDS.
 
 In this experiment, six Open vSwitch (OVS) is used to build the core network and three other switches used for
 providing access network to the data centre and to host machines. The given figure is the network topology for slicing the network.
@@ -34,7 +34,7 @@ necessary steps to drop all the packets from that specific attacker. For executi
 slight change has been brought in the topology, where in access switch of data centre, a host
 has been included as a snort IDS. The below figure presents the updated topology after using SNORT IDS.
 
-![Presentation](https://user-images.githubusercontent.com/57096728/145975613-861789a0-2c36-448f-bf31-596b71078f55.jpg)
+![Presentation](https://user-images.githubusercontent.com/57096728/145981106-bcfcb564-f0f1-4f52-93ce-cde69a2ec850.jpg)
 
 This topology file has been found named **‘topo_with_ryu_snort.py’** in **‘project_ryu’** folder. Moreover, RYU controller application is also updated to take care of this scenario. For designing RYU controller application for this scenario, all the traffic coming to data centre
 access switch have been mirrored to snort IDS port for monitoring. So, whenever any alert
